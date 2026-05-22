@@ -95,7 +95,10 @@ def _parse_roman(roman: str) -> Tuple[str, bool, Optional[str]]:
     roman = roman.strip()
     # Detect flat or sharp prefix
     accidental = ""
-    if roman.startswith("b"):
+    if roman.startswith("bb") or roman.startswith("##"):
+        accidental = roman[:2]
+        roman = roman[2:]
+    elif roman.startswith("b"):
         accidental = "b"
         roman = roman[1:]
     elif roman.startswith("#"):
@@ -103,7 +106,7 @@ def _parse_roman(roman: str) -> Tuple[str, bool, Optional[str]]:
         roman = roman[1:]
 
     # Split numeral from quality suffix
-    match = re.match(r"^(I{1,3}|IV|V?I{0,3}|i{1,3}|iv|v?i{0,3})(.*)$", roman)
+    match = re.match(r"^(IV|VI{0,3}|I{1,3}|iv|vi{0,3}|i{1,3})(.*)$", roman)
     if not match:
         raise ValueError(f"Cannot parse Roman numeral: {roman}")
 
@@ -115,13 +118,13 @@ def _parse_roman(roman: str) -> Tuple[str, bool, Optional[str]]:
 
 def _numeral_to_degree(numeral: str) -> int:
     """Convert a Roman numeral to a scale degree (0-indexed)."""
+    # Strip accidentals for lookup
+    n = numeral.lstrip('b#')
     table = {
         "I": 0, "II": 1, "III": 2, "IV": 3, "V": 4, "VI": 5, "VII": 6,
         "i": 0, "ii": 1, "iii": 2, "iv": 3, "v": 4, "vi": 5, "vii": 6,
-        "bI": 0, "bII": 1, "bIII": 2, "bIV": 3, "bV": 4, "bVI": 5, "bVII": 6,
-        "#I": 0, "#II": 1, "#III": 2, "#IV": 3, "#V": 4, "#VI": 5, "#VII": 6,
     }
-    return table[numeral]
+    return table[n]
 
 
 def _degree_to_pc(degree: int, key_tonic: int, mode: str, accidental: str = "") -> int:
@@ -205,7 +208,7 @@ def parse_roman(
 
     # Check diatonic
     scale = _MAJOR_SCALE if mode == "major" else _MINOR_SCALE
-    is_diatonic = (root in [(key_tonic + s) % 12 for s in scale]) and not accidental and not suffix
+    is_diatonic = (root in [(key_tonic + s) % 12 for s in scale]) and not accidental
 
     return Chord(
         root=root,
