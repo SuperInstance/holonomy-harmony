@@ -13,6 +13,7 @@ from .cycle_checker import (
 )
 from .analyzer import (
     Chord,
+    parse_roman,
     analyze_progression,
     detect_modulations,
     score_stability,
@@ -27,6 +28,7 @@ __all__ = [
     "classify_progression",
     "HolonomyResult",
     "Chord",
+    "parse_roman",
     "analyze_progression",
     "detect_modulations",
     "score_stability",

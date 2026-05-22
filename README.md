@@ -29,10 +29,10 @@ from holonomy_harmony import analyze_progression, PROGRESSIONS
 symbols, tonic, mode = PROGRESSIONS["pachelbel_canon"]
 result = analyze_progression(symbols, key_tonic=tonic, mode=mode)
 
-print(f"Holonomy: {result.holonomy.holonomy}")        # 0 (returns to tonic)
-print(f"Winding:  {result.holonomy.winding_number}")   # 0.0
-print(f"Type:     {result.holonomy.progression_type}") # ProgressionType.DIATONIC
-print(f"Stability: {result.stability_score}")           # ~1.0
+print(f"Holonomy: {result.holonomy.holonomy}")        # -5
+print(f"Winding:  {result.holonomy.winding_number}")   # 0.0833
+print(f"Type:     {result.holonomy.progression_type}") # ProgressionType.MODULATION
+print(f"Stability: {result.stability_score}")           # 0.35
 
 # Analyze Giant Steps — much more adventurous
 symbols, tonic, mode = PROGRESSIONS["giant_steps"]
@@ -43,13 +43,13 @@ print(f"Stability: {result.stability_score}")            # lower
 
 Output:
 ```
-Holonomy: 0
-Winding:  0.0
-Type:     ProgressionType.DIATONIC
-Stability: 1.0
+Holonomy: -5
+Winding:  0.08333333333333333
+Type:     ProgressionType.MODULATION
+Stability: 0.35
 
-Type:     ProgressionType.CHROMATIC
-Stability: 0.18
+Type:     ProgressionType.CHROMATIC_MEDIANT
+Stability: 0.377
 ```
 
 ## API overview
