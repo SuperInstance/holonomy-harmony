@@ -1,0 +1,3 @@
+# holonomy-harmony
+# No runtime dependencies — pure Python
+pytest>=7.0

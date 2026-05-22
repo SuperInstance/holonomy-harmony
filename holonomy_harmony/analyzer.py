@@ -190,7 +190,10 @@ def parse_roman(
 
     # Determine accidental
     accidental = ""
-    if numeral.startswith("b"):
+    if numeral.startswith("bb") or numeral.startswith("##"):
+        accidental = numeral[:2]
+        numeral = numeral[2:]
+    elif numeral.startswith("b"):
         accidental = "b"
         numeral = numeral[1:]
     elif numeral.startswith("#"):
