@@ -131,7 +131,11 @@ def _degree_to_pc(degree: int, key_tonic: int, mode: str, accidental: str = "") 
     """Convert a scale degree to a pitch class."""
     scale = _MAJOR_SCALE if mode == "major" else _MINOR_SCALE
     pc = (key_tonic + scale[degree]) % 12
-    if accidental == "b":
+    if accidental == "bb":
+        pc = (pc - 2) % 12
+    elif accidental == "##":
+        pc = (pc + 2) % 12
+    elif accidental == "b":
         pc = (pc - 1) % 12
     elif accidental == "#":
         pc = (pc + 1) % 12
