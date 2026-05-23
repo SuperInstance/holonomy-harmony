@@ -146,6 +146,12 @@ Process: roots → circle-of-fifths steps → holonomy signature
 Output: HolonomyResult + stability score + modulation list
 ```
 
+## Documentation
+
+- [User Guide](docs/USER-GUIDE.md) — Complete usage documentation
+- [Developer Guide](docs/DEVELOPER-GUIDE.md) — Contributing and internals
+- [Examples](examples/) — Working code examples
+
 ## Related repos
 
 - [spline-midi-smooth](https://github.com/SuperInstance/spline-midi-smooth) — Spline interpolation for MIDI automation
