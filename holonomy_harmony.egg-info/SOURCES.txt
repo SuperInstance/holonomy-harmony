@@ -9,3 +9,6 @@ holonomy_harmony.egg-info/SOURCES.txt
 holonomy_harmony.egg-info/dependency_links.txt
 holonomy_harmony.egg-info/requires.txt
 holonomy_harmony.egg-info/top_level.txt
+tests/test_analyzer.py
+tests/test_cycle_checker.py
+tests/test_tonal_graph.py

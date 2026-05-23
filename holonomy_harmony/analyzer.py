@@ -208,10 +208,17 @@ def parse_roman(
         quality = _suffix_to_quality(suffix, is_upper)
     else:
         qualities = _MAJOR_QUALITIES if mode == "major" else _MINOR_QUALITIES
+        diatonic_q = qualities[degree]
         if accidental:
             quality = "maj" if is_upper else "min"
+        # Respect case: uppercase = major, lowercase = minor
+        # unless diatonic quality already matches (e.g. I=maj, ii=min)
+        elif is_upper and diatonic_q not in ("maj", "maj7", "7"):
+            quality = "maj"
+        elif not is_upper and diatonic_q not in ("min", "dim", "min6", "m7", "m7b5"):
+            quality = "min"
         else:
-            quality = qualities[degree]
+            quality = diatonic_q
 
     # Check diatonic
     scale = _MAJOR_SCALE if mode == "major" else _MINOR_SCALE
