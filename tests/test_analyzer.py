@@ -1,9 +1,7 @@
 """Tests for holonomy_harmony.analyzer."""
 
-import pytest
 
 from holonomy_harmony.analyzer import (
-    Chord,
     PROGRESSIONS,
     analyze_progression,
     detect_modulations,

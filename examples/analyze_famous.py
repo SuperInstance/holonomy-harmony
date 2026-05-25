@@ -77,12 +77,12 @@ def main():
         print(f"  Stability: {score_stability(analysis):.3f}")
 
         if analysis.modulations:
-            print(f"  Modulations:")
+            print("  Modulations:")
             for idx, desc in analysis.modulations:
                 print(f"    Beat {idx}: {desc}")
 
         if analysis.modal_interchanges:
-            print(f"  Modal interchanges:")
+            print("  Modal interchanges:")
             for idx, desc in analysis.modal_interchanges:
                 print(f"    Beat {idx}: {desc}")
 

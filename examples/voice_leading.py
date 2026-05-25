@@ -13,10 +13,6 @@ Run:  python3 examples/voice_leading.py
 
 from holonomy_harmony import (
     analyze_progression,
-    compute_holonomy,
-    TonalGraph,
-    Chord,
-    parse_roman,
 )
 from holonomy_harmony.tonal_graph import semitone_interval, pitch_name
 

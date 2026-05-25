@@ -14,8 +14,6 @@ Run:  python3 examples/progression.py
 
 from holonomy_harmony import (
     analyze_progression,
-    detect_modulations,
-    score_stability,
     PROGRESSIONS,
 )
 from holonomy_harmony.tonal_graph import pitch_name
@@ -59,12 +57,12 @@ for name in deep_dives:
     print(f"  Stability: {analysis.stability_score:.3f}")
 
     if analysis.modulations:
-        print(f"  Modulations:")
+        print("  Modulations:")
         for idx, desc in analysis.modulations:
             print(f"    Beat {idx}: {desc}")
 
     if analysis.modal_interchanges:
-        print(f"  Modal interchanges:")
+        print("  Modal interchanges:")
         for idx, desc in analysis.modal_interchanges:
             print(f"    Beat {idx}: {desc}")
 

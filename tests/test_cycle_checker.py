@@ -3,7 +3,6 @@
 import pytest
 
 from holonomy_harmony.cycle_checker import (
-    HolonomyResult,
     ProgressionType,
     classify_progression,
     compute_holonomy,

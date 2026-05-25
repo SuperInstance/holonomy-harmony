@@ -48,7 +48,7 @@ def main():
     print(f"  Stability: {score_stability(gs):.3f}")
 
     # ── Cumulative tonal drift ──────────────────────────────────────────────
-    print(f"\n  Cumulative tonal displacement (circle-of-fifths steps):")
+    print("\n  Cumulative tonal displacement (circle-of-fifths steps):")
     cum = gs.holonomy.cumulative
     for i, c in enumerate(cum):
         bar = "█" * abs(c) if c != 0 else "·"
@@ -115,7 +115,7 @@ def main():
   Pachelbel's Canon uses stepwise diatonic motion (I → V → vi → iii...),
   which stays close to the tonic — zero net drift, no modulation.""")
 
-    print(f"\n✓ Modulation analysis complete.")
+    print("\n✓ Modulation analysis complete.")
 
 
 if __name__ == "__main__":

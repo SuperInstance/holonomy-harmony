@@ -50,11 +50,11 @@ def main():
     print(f"  Stability: {score_stability(pach):.3f}")
 
     if pach.modulations:
-        print(f"  Modulations:")
+        print("  Modulations:")
         for idx, desc in pach.modulations:
             print(f"    Beat {idx}: {desc}")
     else:
-        print(f"  Modulations: none (purely diatonic)")
+        print("  Modulations: none (purely diatonic)")
 
     # ── Coltrane Changes ────────────────────────────────────────────────────
     symbols_c, key_c, mode_c = PROGRESSIONS["coltrane_changes"]
@@ -70,7 +70,7 @@ def main():
     print(f"  Stability: {score_stability(coltrane):.3f}")
 
     if coltrane.modulations:
-        print(f"  Modulations:")
+        print("  Modulations:")
         for idx, desc in coltrane.modulations:
             print(f"    Beat {idx}: {desc}")
 
@@ -101,7 +101,7 @@ def main():
   constant harmonic acceleration. It's the opposite of Pachelbel —
   instead of comfort, it creates dazzling tension and release.""")
 
-    print(f"\n✓ Comparison complete.")
+    print("\n✓ Comparison complete.")
 
 
 if __name__ == "__main__":

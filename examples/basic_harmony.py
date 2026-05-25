@@ -13,10 +13,7 @@ Run:  python3 examples/basic_harmony.py
 
 from holonomy_harmony import (
     analyze_progression,
-    Chord,
     parse_roman,
-    compute_holonomy,
-    winding_number,
 )
 
 # --- Parse individual chords ---
@@ -71,7 +68,6 @@ print(f"Tonal graph: {analysis.graph}")
 for pc in range(12):
     neighbors = analysis.graph.neighbors(pc)
     if neighbors:
-        from holonomy_harmony import TonalGraph
         from holonomy_harmony.tonal_graph import pitch_name
         for n in neighbors:
             w = analysis.graph.weight(pc, n)
