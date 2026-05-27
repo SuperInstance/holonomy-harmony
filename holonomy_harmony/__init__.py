@@ -19,6 +19,21 @@ from .analyzer import (
     score_stability,
     PROGRESSIONS,
 )
+from .topology import (
+    TopologyAnalyzer,
+    SimplicialComplex,
+    BettiNumbers,
+    FundamentalGroupPresentation,
+    HomologyGroup,
+    TopologicalInvariants,
+)
+from .flow import (
+    CurvatureFlow,
+    CurvatureMeasure,
+    CurvatureEdge,
+    CurvatureSnapshot,
+    FlowState,
+)
 
 __all__ = [
     "TonalGraph",
@@ -33,4 +48,17 @@ __all__ = [
     "detect_modulations",
     "score_stability",
     "PROGRESSIONS",
+    # topology
+    "TopologyAnalyzer",
+    "SimplicialComplex",
+    "BettiNumbers",
+    "FundamentalGroupPresentation",
+    "HomologyGroup",
+    "TopologicalInvariants",
+    # flow
+    "CurvatureFlow",
+    "CurvatureMeasure",
+    "CurvatureEdge",
+    "CurvatureSnapshot",
+    "FlowState",
 ]
