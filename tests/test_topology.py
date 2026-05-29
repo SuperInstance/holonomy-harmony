@@ -2,14 +2,12 @@
 
 from __future__ import annotations
 
-import pytest
 
 from holonomy_harmony.tonal_graph import TonalGraph
 from holonomy_harmony.topology import (
     BettiNumbers,
     FundamentalGroupPresentation,
     HomologyGroup,
-    SimplicialComplex,
     TopologicalInvariants,
     TopologyAnalyzer,
 )

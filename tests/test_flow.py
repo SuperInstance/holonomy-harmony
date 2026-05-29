@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import math
 import pytest
 
 from holonomy_harmony.tonal_graph import TonalGraph

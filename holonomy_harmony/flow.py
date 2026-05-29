@@ -17,7 +17,7 @@ from dataclasses import dataclass, field
 from enum import Enum, auto
 from typing import Dict, List, Optional, Tuple
 
-from .tonal_graph import TonalGraph, PITCH_CLASSES, TransitionDirection, classify_direction
+from .tonal_graph import TonalGraph, PITCH_CLASSES, TransitionDirection
 
 
 # ---------------------------------------------------------------------------

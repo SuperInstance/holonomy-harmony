@@ -11,7 +11,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Dict, FrozenSet, List, Optional, Set, Tuple
 
-from .tonal_graph import TonalGraph, PITCH_CLASSES, Edge
+from .tonal_graph import TonalGraph, PITCH_CLASSES
 
 
 # ---------------------------------------------------------------------------
